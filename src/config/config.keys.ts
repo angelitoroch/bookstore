@@ -3,6 +3,7 @@ export enum Configuration {
   PORT = 'PORT',
   HOST = 'HOST',
   USERNAME = 'USERNAME',
-  PASWORD = 'PASWORD',
+  PASSWORD = 'PASSWORD',
   DATABASE = 'DATABASE',
+  SSL = 'SSL'
 }
