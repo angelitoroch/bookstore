@@ -1,4 +1,8 @@
 /*Archivo de configuraciones globales*/
 export enum Configuration {
-    PORT = 'PORT'
+  PORT = 'PORT',
+  HOST = 'HOST',
+  USERNAME = 'USERNAME',
+  PASWORD = 'PASWORD',
+  DATABASE = 'DATABASE',
 }

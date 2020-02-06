@@ -14,6 +14,7 @@ import { DatabaseModule } from './database/database.module';
 export class AppModule {
   static port: number | string;
 
+  /** Inyectamos el servicio del tipo ConfigService*/
   constructor(private readonly _configService: ConfigService) {
     AppModule.port = this._configService.get(Configuration.PORT);
   }
