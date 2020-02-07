@@ -4,6 +4,5 @@ export enum Configuration {
   HOST = 'HOST',
   USERNAME = 'USERNAME',
   PASSWORD = 'PASSWORD',
-  DATABASE = 'DATABASE',
-  SSL = 'SSL'
+  DATABASE = 'DATABASE'
 }
