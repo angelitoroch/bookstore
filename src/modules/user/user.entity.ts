@@ -51,4 +51,4 @@ export class User extends BaseEntity {
   )
   @JoinTable({ name: 'user_roles' })
   roles: Role[];
-}
+} 
