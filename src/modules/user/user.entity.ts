@@ -1,8 +1,18 @@
-import { BaseEntity, Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
+import {
+  BaseEntity,
+  Entity,
+  PrimaryGeneratedColumn,
+  Column,
+  OneToOne,
+  JoinTable,
+  ManyToMany,
+  JoinColumn,
+} from 'typeorm';
+import { UserDetails } from '../user/user.details.entity';
+import { Role } from '../role/role.entity';
 
 @Entity('users')
 export class User extends BaseEntity {
-    
   /**Columna primaria que se genera a traves de un autoincrementable */
   @PrimaryGeneratedColumn('increment')
   id: number;
@@ -25,4 +35,20 @@ export class User extends BaseEntity {
 
   @Column({ type: 'timestamp', name: 'update_at' })
   updateAT: Date;
-}
+
+  @OneToOne(type => UserDetails, {
+    cascade: true,
+    nullable: false,
+    eager: true,
+  })
+  @JoinColumn({ name: 'detail_id' })
+  details: UserDetails;
+
+  /**Tabla intermedia para la relacion de user con role */
+  @ManyToMany(
+    type => Role,
+    role => role.users,
+  )
+  @JoinTable({ name: 'user_roles' })
+  roles: Role[];
+} 
