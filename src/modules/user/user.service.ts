@@ -73,4 +73,4 @@ export class UserService {
     /**No se elimina solamente se poen en inactivo */
     await this._userRepository.update(id, { status: 'INACTIVE' });
   }
-}
+} 
